@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Instruiraj.me</title>
+        <link rel="stylesheet" href="stil.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="icon" href="logo-culjak.png" type="image/png" sizes="16x16">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    </head>
+    <!--Grid wrapper-->
+    <body class="wrapper">    
+        <!--Menu-->
+        <section class="row-10 column-2 pozBoja">
+            <!--logo-->
+            <img src="logo-culjak.png" alt="" class="slika">
+            <!--naslov-->
+            <h1 class="naslov">Instruiraj.me</h1>
+            <!--informacije o useru-->
+           <p class="centriraj">Matija Vasiljev</p>
+		   <p class="centriraj"><i>X. gimnazija "Ivan Supek"</i></p>
+           <p class="centriraj">Broj tokena: <b>2</b></p>
+    
+            <!--forma za pretrživanje-->
+            <form>
+                <p>Odaberite grad:</p>
+                <select name="Grad" id="Grad">
+                    <option value="0">Zagreb</option>
+                </select>
+                <p>Odaberite kvart:</p>
+                <select name="Kvart" id="Kvart" class="Kvart">
+                    <option value="0">Odaberite kvart</option>
+                    <option value="1">Donji grad</option>
+                    <option value="2">Gornji grad/Medveščak</option>
+                    <option value="3">Trnje</option>
+                    <option value="4">Maksimir</option>
+                    <option value="5">Peščenica-Žitnjak</option>
+                    <option value="6">Novi Zagreb Istok</option>
+                    <option value="7">Novi Zagreb Zapad</option>
+                    <option value="8">Trešnjevka sjever</option>
+                    <option value="9">Trešnjevka jug</option>
+                    <option value="10">Črnomerec</option>
+                    <option value="11">Gornja Dubrava</option>
+                    <option value="12">Donja Dubrava</option>
+                    <option value="13">Stenjevec</option>
+                    <option value="14">Podsused-Vrapče</option>
+                    <option value="15">Podsljeme</option>
+                    <option value="16">Sesvete</option>
+                    <option value="17">Brezovica</option>
+                </select>
+                <p>Odaberite predmet:</p>
+                <select name="Predmet" id="Predmet" class="Predmet">
+                        <option value="0">Hrvatski</option>
+                        <option value="1">Matematika</option>
+                        <option value="2">Engleski</option>
+                </select>
+                <button id="filtriraj" class="filtriraj">Pronađi</button>
+            </form>
+            <section class="buttons">
+        
+            <button class="pocetna" onclick="window.location.href='index.html'"><i class="fas fa-angle-double-left"></i> Odjavi me</button>
+        
+            <a href="#" class="settings"><i class="fas fa-cog icon-settings"></i></a>
+            </section>
+        </section>
+        <section class="chat chat-hidden" id="chat">
+            <h1 id="ime" class="chat-name"></h1>
+            <article class="chat-display" id="display"></article>
+            <input type="text" id="text" class="chat-text">
+            <input type="button" id="posalji" value="Pošalji" class="chat-button">
+            <input type="button" id="izađi" value="Izađi" class="chat-button">
+        </section>
+        <!--mapa-->
+        <article id="map" class="mapa">
+            
+        </article>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="javascriptMape.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6-8OIlBjMXUpzRsNQuE3ITDYQ6cxUyts&callback=initMap"
+        async defer></script>
+        <script type="text/javascript" src="jsonUsers.json"></script>
+        <script>
+            document.getElementById("map"),addEventListener("click", function(){
+                let poruke = Array.from(document.getElementsByName("popup-poruka"));
+                let ime = Array.from(document.getElementsByName("ime"));
+                poruke.forEach(function(e, i){
+                    poruke[i].addEventListener("click", function(e){
+                        document.getElementById("chat").classList.remove("chat-hidden");
+                        document.getElementById("chat").classList.add("chat-visible");
+                        document.getElementById("ime").innerHTML = ime[i].innerHTML;
+                    });
+                });
+            });
+            document.getElementById("izađi").addEventListener("click", function(){
+                document.getElementById("chat").classList.remove("chat-visible");
+                document.getElementById("chat").classList.add("chat-hidden");
+            })
+            document.getElementById("posalji").addEventListener("click", function(){
+                let tekst = document.getElementById("text").value;
+                let div = document.createElement("div");
+                div.classList.add("chat-item");
+                div.innerHTML = tekst;
+                document.getElementById("display").appendChild(div);
+            })
+        </script>
+    </body>
+</html>

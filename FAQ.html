@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>FAQ</title>
+        <link rel="stylesheet" href="stil.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="icon" href="logo-culjak.png" type="image/png" sizes="16x16">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    </head>
+    <body class="wrapper hero">
+      
+        <!--Glavan cjelina gdje se nalaze pitanja-->
+        <main class="cjelina">
+            <!--Navigacija po pitanjima-->
+            <header>
+                <a href="#" class="faqNav" id="nazad"><i class="fas fa-angle-double-left"></i></a>
+                <h1 class="faqNas">FAQ</h1>
+                <a href="#" class="faqNav" id="naprijed"><i class="fas fa-angle-double-right"></i></a>
+            </header>
+            <!--section s artiklima-->
+            <section>
+                <!--artikli-->
+                <article class="vidljiv">
+                    <h3><i>Što je to Instruiraj.me?</i></h3>
+                    <p>Instruiraj.me je platforma koja pomaže srednjoškolcima da se spoje sa svojim kolegama te na taj način zajedno uče i prikupljaju virtualne nagrade.</p>
+                </article>
+                <article class="nevidljiv">
+                    <h3><i>Za koga je namijenjen Instruiraj.me?</i></h3>
+                    <p>Stranica je namijenjena svim srednjoškolcima u gradu Zagrebu, ali to planiramo proširiti u bližoj budućnosti.</p>
+                </article>
+				<article class="nevidljiv">
+                    <h3><i>Zašto ne klasične instrukcije?</i></h3>
+                    <p>Klasične instrukcije imaju isti način razmjene znanja kao i u školama - predavač predaje znanje učeniku. Kroz <i>Instruiraj.me</i> platformu, učenici sami znaju što im nije jasno i na taj način besplatno pomažu jedni drugima. Razvijaju im se vještine predavanja koje nisu razvijane u školama i učenici se međusobno upoznaju bolje.</p>
+                </article>
+                <article class="nevidljiv">
+                    <h3><i>Kako da krenem koristiti Instruiraj.me?</i></h3>
+                    <p>Samo se registriraj, pronađi korisnika koji ti nudi potrebne instrukcije, kontaktiraj ga i sve ostalo je na dogovoru između vas dvoje.</p>
+                </article>
+                <article class="nevidljiv">
+                    <h3><i>Koje su nagrade za davanje instrukcija?</i></h3>
+                    <p>Prilikom registracija svaki korisnik ima 2 tokena koja može iskoristiti da mu drugi korisnik održi instrukcije. Na isti način korisnik može i zaraditi tokene. Korisnici s najvećim brojem tokena na kraju akademske godine, dobivaju stvarne nagrade!</p>
+                </article>
+                <article class="nevidljiv">
+                    <h3><i>Zašto samo 2 tokena?</i></h3>
+                    <p>Cilj ovakvog koncepta je da se korisnici sami aktiviraju prilikom dijeljenja znanju. Zato svaki korisnik treba dati nešto kako bi mogao uzeti nešto. Cilj je izgraditi zajednicu mladih i odgovornih ljudi.</p>
+                </article>
+				<article class="nevidljiv">
+                    <h3><i>Mogu li se tokeni zaraditi samo razmjenom znanja stečenim u srednjoj školi?</i></h3>
+                    <p>Naravno da ne. Svako znanje koje jedan učenik može naučiti drugog, dobrodošlo je. Svejedno je bila instrukcije iz matematike, engleskog ili gitare - cilj je razmjena znanja da bi se učenici povezali i stekli što više znanja.</p>
+                </article>
+            </section>
+            <!--Button za vratiti se nazad na pocetnu stranicu-->
+            <button class=" nazad2" onclick="window.location.href='index.html'"><i class="fas fa-angle-double-left"></i> Nazad</button>
+        </main>
+        <!--javaScript code za pomicanje artikala-->
+        <script type="text/javascript">
+            let artikli = Array.from(document.getElementsByTagName("article"));
+            let i = 0;
+            let j = 0;
+            let reset = artikli.length-1
+            console.log(reset);
+            document.getElementById("naprijed").addEventListener("click", function(){
+                if(i === reset) {
+                artikli[i].classList.remove("vidljiv");
+                artikli[i].classList.add("nevidljiv");
+                i=0;
+                artikli[i].classList.remove("nevidljiv");
+                artikli[i].classList.add("vidljiv");
+                j = i;
+                }
+                else{
+                artikli[i].classList.remove("vidljiv");
+                artikli[i].classList.add("nevidljiv");
+                i++;
+                artikli[i].classList.remove("nevidljiv");
+                artikli[i].classList.add("vidljiv");
+                j = i;
+                }
+            });
+            document.getElementById("nazad").addEventListener("click", function(){
+                if(j === 0){
+                artikli[j].classList.remove("vidljiv");
+                artikli[j].classList.add("nevidljiv");
+                j = reset;
+                artikli[j].classList.remove("nevidljiv");
+                artikli[j].classList.add("vidljiv");
+                i = j;
+                }
+                else{
+                artikli[j].classList.remove("vidljiv");
+                artikli[j].classList.add("nevidljiv");
+                j--;
+                artikli[j].classList.remove("nevidljiv");
+                artikli[j].classList.add("vidljiv");
+                i = j;
+                }
+            });
+
+        </script>
+    </body>
+</html>

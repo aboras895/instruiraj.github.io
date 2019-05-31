@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Registracija</title>
+        <link rel="stylesheet" href="stil.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="icon" href="logo-culjak.png" type="image/png" sizes="16x16">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="javascriptMape.js" type="text/javascript"></script>
+    </head>
+    <body class="wrapper hero">
+        <main class="signup">
+            <form action="indek.html">
+                <h1 class="Registracija">Registriraj se</h1>
+                <p class="formaElementi">Korisničko ime:</p>
+                <input type="text" class="formaElementi" id="username">
+
+                <p class="formaElementi">Lozinka: </p>
+                <input type="password" class="formaElementi" id="password">
+
+                <p class="formaElementi">Ponovi lozinku: </p>
+                <input type="password" class="formaElementi" id="repetedPassword">
+
+                <p class="formaElementi">Ime:</p>
+                <input type="text" class="formaElementi" id="name">
+
+                <p class="formaElementi">Prezime:</p>
+                <input type="text" class="formaElementi" id="lastname">
+
+                <p class="formaElementi">Grad:</p>
+                <input type="text" class="formaElementi" id="city">
+
+                <p class="formaElementi">Ulica:</p>
+                <input type="text" class="formaElementi" id="street">
+
+                <p class="formaElementi">Kućni broj:</p>
+                <input type="text" class="formaElementi" id="house">
+
+
+                <p class="formaElementi">Ustanova:</p>
+                <select id="Ustavova" class="formaElementi">
+                    <option value="0">I. gimnazija</option>
+                    <option value="1">II. gimnazija</option>
+                    <option value="2">III. gimnazija</option>
+                    <option value="3">IV. gimnazija</option>
+                    <option value="4">V. gimnazija</option>
+                    <option value="5">Gornjogradska gimnazija</option>
+                    <option value="6">VII. gimnazija</option>
+                    <option value="7">Gimnazija Tituša Brezovačkog</option>
+                    <option value="8">IX. gimnazija</option>
+                    <option value="9">X. gimnazija „Ivan Supek“</option>
+                    <option value="10">XI. gimnazija</option>
+                    <option value="11">XII. gimnazija</option>
+                    <option value="12">XIII. gimnazija</option>
+                    <option value="13">Gimnazija Lucijana Vranjanina</option>
+                    <option value="14">XV. gimnazija</option>
+                    <option value="15">XVI. gimnazija</option>
+                    <option value="16">Klasična gimnazija</option>
+                    <option value="17">XVIII. gimnazija</option>
+                    <option value="18">Gimnazija Sesvete</option>
+                    <option value="19">Športska gimnazija</option>
+                    <option value="20">Upravna škola Zagreb</option>
+                    <option value="21">Ugostiteljsko-turističko učilište</option>
+                    <option value="22">Hotelijersko-turistička škola u Zagrebu</option>
+                    <option value="23">Zdravstveno učilište</option>
+                    <option value="24">Škola za medicinske sestre Mlinarska (s učeničkim domom)</option>
+                    <option value="25">Škola za medicinske sestre Vinogradska</option>
+                    <option value="26">Škola za medicinske sestre Vrapče</option>
+                    <option value="27">Škola za primalje (s učeničkim domom)</option>
+                    <option value="28">Veterinarska škola</option>
+                    <option value="29">Prva ekonomska škola</option>
+                    <option value="30">Druga ekonomska škola</option>
+                    <option value="31">Treća ekonomska škola</option>
+                    <option value="32">I. tehnička škola Tesla</option>
+                    <option value="33">Strojarska tehnička škola Fausta Vrančića</option>
+                    <option value="34">Strojarska tehnička škola Frana Bošnjakovića</option>
+                    <option value="35">Elektrotehnička škola</option>
+                    <option value="36">Tehnička škola Ruđera Boškovića</option>
+                    <option value="37">Graditeljska tehnička škola</option>
+                    <option value="38">Geodetska škola</option>
+                    <option value="39">Prirodoslovna škola Vladimira Preloga</option>
+                    <option value="40">Poštanska i telekomunikacija škola</option>
+                    <option value="41">Škola za cestovni promet</option>
+                    <option value="42">Tehnička škola Zagreb (s učeničkim domom)</option>
+                    <option value="43">Trgovačka škola</option>
+                    <option value="44">Poljoprivredna škola</option>
+                    <option value="45">Prehrambeno-tehnološka škola</option>
+                    <option value="46">Škola za modu i dizajn</option>
+                    <option value="47">Škola za grafiku, dizajn i medijsku produkciju</option>
+                    <option value="48">Drvodjeljska škola Zagreb</option>
+                    <option value="49">Elektrostrojarska obrtnička škola</option>
+                    <option value="50">Industrijska strojarska škola</option>
+                    <option value="51">Obrtnička industrijska graditeljska škola</option>
+                    <option value="52">Škola za montažu instalacija i metalnih konstrukcija</option>
+                    <option value="53">Obrtnička škola za osobne usluge</option>
+                    <option value="54">Srednja škola Jelkovec</option>
+                </select>
+
+                <p class="formaElementi">Razred</p>
+                <select id="Razred" class="formaElementi">
+                    <option value="0">Prvi</option>
+                    <option value="1">Drugi</option>
+                    <option value="2">Treći</option>
+                    <option value="3">Četvrti</option>
+                </select>
+                <button class="prijava" onclick="window.location.href='login.html'" id="signup" >Registriraj se</button>
+            </form>
+            
+           
+             
+        
+        </main>
+        <button class="povratak" onclick="window.location.href='index.html'"><i class="fas fa-angle-double-left"></i> Nazad</button>
+        <script type="text/javascript">
+            /**/
+            console.log(markeri[0].koordinate.lat);
+            console.log(markeri[0].koordinate.lng);
+            
+            function geolokacija(e){
+                e.preventDefault;
+                let i = markeri.lenght;
+                let Grad = document.getElementById("city").value;
+                let ulica = document.getElementById("street").value;
+                let kucniBroj = document.getElementById("house").value;
+                let ime = document.getElementById("name").value;
+                let prezime = document.getElementById("lastname").value;
+                let url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + kucniBroj + "+" + ulica + ",+" + Grad + "&key=AIzaSyD6-8OIlBjMXUpzRsNQuE3ITDYQ6cxUyts"
+                console.log(url);
+                axios.get(url)  
+                .then(function(response){
+                    console.log(response);
+                    let lat = response.data.results[0].geometry.location.lat;
+                    let lng = response.data.results[0].geometry.location.lng;
+                   console.log(markeri);
+                })
+                
+                .catch(function(error){
+                    console.log(error);
+                 });
+            }
+            
+
+            document.getElementById("signup").addEventListener("click", geolokacija);
+
+           
+
+        </script>
+       
+    </body>
+</html>

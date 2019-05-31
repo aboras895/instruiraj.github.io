@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ulogiraj se</title>
+        <link rel="stylesheet" href="stil.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="icon" href="logo-culjak.png" type="image/png" sizes="16x16">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    </head>
+    <body class="wrapper hero">
+            <button class=" nazad" onclick="window.location.href='index.html'"><i class="fas fa-angle-double-left"></i> Nazad</button>
+            <!--forma za login-->
+            <form action="indek.html" class="forma" id="forma">
+                <!--username-->
+                <h1>Korisničko ime</h1>
+                <!--username input-->
+                <input type="text" id="user" class="LoginText">
+                <!--password-->
+                <h1>Lozinka</h1>
+                <!--password input-->
+                <input type="password" id="pass" class="LoginText">
+                <!--gumb za login i provjeru-->
+                <input type="submit" value="Prijava" class="gumb" id="login" style="color:white;">
+            </form>
+            <!--trenutna scripta za login-->
+            <script>
+                document.getElementById("forma").addEventListener("submit", function(event){
+                    let user = document.getElementById("user").value;
+                    let pass = document.getElementById("pass").value;
+                    if(user != "matija" || pass != "vasiljev"){
+                        event.preventDefault();
+                        alert("Nije dobro unesen username ili password");
+                    }
+
+                });
+            </script>
+    </body>
+</html>

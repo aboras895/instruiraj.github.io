@@ -1,0 +1,22 @@
+{   
+    [{
+        "koordinate": {
+            "lat": 45.815399, 
+            "lng": 15.966568
+        },
+        "Ime": "Pero",
+        "Prezime": "Peric",
+        "ustanova": "X gimnazija",
+        "adresa": ""
+        },
+        {
+            "koordinate": {
+                "lat": 45.795500, 
+                "lng": 15.926400
+            },
+            "Ime": "Đuro",
+            "Prezime": "Peric",
+            "ustanova": "X gimnazija",
+            "adresa": "" 
+        }]
+}
